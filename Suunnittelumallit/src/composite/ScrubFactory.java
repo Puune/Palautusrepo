@@ -1,12 +1,12 @@
 package composite;
 
-import composite.parts.CPU;
-import composite.parts.Case;
 import composite.parts.Component;
-import composite.parts.GPU;
-import composite.parts.MemoryDrive;
-import composite.parts.Motherboard;
-import composite.parts.RAM;
+import composite.parts.subParts.CPU;
+import composite.parts.subParts.Case;
+import composite.parts.subParts.GPU;
+import composite.parts.subParts.MemoryDrive;
+import composite.parts.subParts.Motherboard;
+import composite.parts.subParts.RAM;
 
 public class ScrubFactory implements ComputerFactory{
 

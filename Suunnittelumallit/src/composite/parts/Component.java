@@ -6,7 +6,7 @@ import java.util.Comparator;
 
 public abstract class Component implements Comparable<Component> {
 	
-	ArrayList<Component> parts = new ArrayList<>();
+	protected ArrayList<Component> parts = new ArrayList<>();
 	String price;
 	String model;
 	

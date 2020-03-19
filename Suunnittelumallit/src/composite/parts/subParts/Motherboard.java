@@ -1,4 +1,6 @@
-package composite.parts;
+package composite.parts.subParts;
+
+import composite.parts.Component;
 
 public class Motherboard extends Component {
 
