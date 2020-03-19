@@ -30,6 +30,7 @@ public class LinkedList {
 	public Item pop() {
 		Item temp = head.clone();
 		head = head.last();
+		head.setNext(null);
 		size--;
 		return temp;
 	}
