@@ -24,6 +24,9 @@ public class Main {
 		System.out.println("total: " + cCase.getCombinedPrice());
 		
 		
+		/*
+		 * 2nd computer
+		 */
 		System.out.println("\n\nbuild a new heating unit for your apartment");
 		ComputerFactory warm = new CentralHeatingFactory();
 		
