@@ -25,22 +25,22 @@ public abstract class Component implements Comparable<Component> {
 	
 	
 	public float getCombinedPrice() {
-		float temp = 0;
+		float combinedPrice = 0;
 		try {
-			temp = Float.parseFloat(price);
+			combinedPrice = Float.parseFloat(price);
 		} catch (Exception e) {
 			//not a price
 		}
 		
 		for(Component c : parts) {
-			temp += c.getCombinedPrice();
+			combinedPrice += c.getCombinedPrice();
 		}
 		
-		temp *= 100;
-		Math.round(temp);
-		temp /= 100;
+		combinedPrice *= 100;
+		Math.round(combinedPrice);
+		combinedPrice /= 100;
 		
-		return temp;
+		return combinedPrice;
 	}
 	
 	

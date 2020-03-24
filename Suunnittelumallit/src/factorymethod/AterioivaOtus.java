@@ -8,18 +8,18 @@ public abstract class AterioivaOtus {
 
 
     public void aterioi(){
-        syö();
+        syÃ¶();
         juo();
     }
 
-    public void syö(){
-        System.out.println("Kylläpäs ruoka maistuukin hyvältä");
+    public void syÃ¶(){
+        System.out.println("Kyllï¿½pï¿½s ruoka maistuukin hyvï¿½ltï¿½");
     }
 
 
     public void juo(){
         if (juoma == null)
             juoma = createJuoma();
-        System.out.println("Aterian jälkeen " + juoma + " tekee terää");
+        System.out.println("Aterian jï¿½lkeen " + juoma + " tekee terï¿½ï¿½");
     }
 }
