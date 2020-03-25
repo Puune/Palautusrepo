@@ -8,6 +8,7 @@ import java.io.FileWriter;
 
 /**
  * @author Panu Lindqvist
+ * configs.txt lue ja kirjoita työkalu, data säilötty mallia {key}={value};\n
  * Tämän ei pitänyt olla näin laaja, mutta tulipa tehtyä
  */
 public class ConfigReaderSingleton {
