@@ -44,6 +44,7 @@ public class ConfigReaderSingleton {
 	 */
 	public int readConfig(String PARAM) {	
 		int result = 0;		
+		
 		synchronized(lock) {
 			lock();
 			try(
@@ -60,7 +61,6 @@ public class ConfigReaderSingleton {
 						break;
 					}
 				}
-				
 				fr.close();
 			} catch(Exception e) {
 				System.out.println("Exception reading configs");
@@ -80,7 +80,6 @@ public class ConfigReaderSingleton {
 	 */
 
 	public int writeConfig(String PARAM, int newConfig) {
-		int result = 0;
 		StringBuffer file = new StringBuffer();
 		
 		synchronized(lock) {
@@ -123,7 +122,7 @@ public class ConfigReaderSingleton {
 				edit++;
 			}
 			/*  handle there being more indexes than before */
-			if(edit<change.length()-1) {
+			if(edit<change.length()) {
 				String s = change.substring(edit);
 				file.insert(startIndex+edit, s);
 			}	
@@ -137,8 +136,8 @@ public class ConfigReaderSingleton {
 				e.printStackTrace();
 			}
 			unlock();
+			return newConfig;
 		}
-		return result;
 	}
 	
 	
@@ -147,18 +146,31 @@ public class ConfigReaderSingleton {
 	 * - lock when getting to operate
 	 */
 	private void lock() {
+		Thread current = Thread.currentThread();
+		System.out.println(current.getId() + " waiting");
+		
 		while(operating) {
 			try {
 				lock.wait();
 			} catch (InterruptedException e) {}
 		}
 		operating = true;
+		
+		try {
+			//to slow down threads
+			Thread.sleep(300);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+		}
 	}
 	
 	/**
 	 * Release lock
 	 */
 	private void unlock() {
+		Thread current = Thread.currentThread();
+		System.out.println(current.getId() + " done");
+		
 		operating = false;
 		lock.notifyAll();
 	}
