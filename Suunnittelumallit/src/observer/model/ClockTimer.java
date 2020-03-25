@@ -38,7 +38,7 @@ public class ClockTimer  extends Subject{
 	
 	/**
 	 * @author Panu Lindqvist
-	 * Ticker runnable
+	 * Ticker thread
 	 */
 	class Ticker extends Thread{
 		ClockTimer timer = null;
@@ -51,12 +51,19 @@ public class ClockTimer  extends Subject{
 		
 		@Override
 		public void run() {
-			//main loop
+			
+			/*
+			 * main loop
+			 * check send update tick every second
+			 */
 			while(run) {
 				double previous = Math.floor(last / 1000);
 				boolean hasChanged = false;
 			
-				//between seconds loop
+				/*
+				 * between seconds loop
+				 * check if >1.000s threshold is reached
+				 */
 				while(!hasChanged) {
 					long current_ms = System.currentTimeMillis();
 					double current = Math.floor(current_ms / 1000);
