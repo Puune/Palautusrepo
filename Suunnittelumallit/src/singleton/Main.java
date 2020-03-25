@@ -14,7 +14,7 @@ public class Main {
 }
 	
 class TaskThread extends Thread{
-	//Each thread gets its own instance of conf
+	//Each thread gets INSTANCE independently
 	ConfigReaderSingleton conf = ConfigReaderSingleton.getInstance();
 	private String param;
 	

@@ -160,7 +160,6 @@ public class ConfigReaderSingleton {
 			//to slow down threads
 			Thread.sleep(300);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 		}
 	}
 	
