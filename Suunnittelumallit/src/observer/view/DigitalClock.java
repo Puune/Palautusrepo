@@ -22,6 +22,17 @@ public class DigitalClock  implements Observer{
 	
 	private void draw() {
 		System.out.println("DigitalClock");
-		System.out.println(ct.getHours() + ":" + ct.getMinutes() + ":" + ct.getSeconds());
+		int time[] = { ct.getHours(), ct.getMinutes(), ct.getSeconds() };
+		
+		String[] print = new String[3];
+		for(int i=0; i<3; i++) {
+			if(time[i]<9) {
+				print[i] = "0" + time[i];
+			} else {
+				print[i] = String.valueOf(time[i]);
+			}
+		}
+		
+		System.out.println(print[0] + ":" + print[1] + ":" + print[2]);
 	}
 }
