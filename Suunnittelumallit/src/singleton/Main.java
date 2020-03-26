@@ -32,6 +32,7 @@ class TaskThread extends Thread{
 				a = conf.writeConfig(param, a);
 				System.out.println(this.getId() + ", " + param + "=" + a);
 			}
+			System.out.println();		
 		}
 	}
 }

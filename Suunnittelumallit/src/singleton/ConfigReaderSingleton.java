@@ -33,9 +33,7 @@ public class ConfigReaderSingleton {
 	public final String P_MIN = "MIN_NUMBER";
 	
 	private Object lock = new Object();
-	
-	private boolean operating = false;
-	
+		
 	/**
 	 * Read lines until searched param is found, return value. 
 	 * Thread-safe
@@ -147,18 +145,12 @@ public class ConfigReaderSingleton {
 	 */
 	private void lock() {
 		Thread current = Thread.currentThread();
-		System.out.println(current.getId() + " waiting");
-		
-		while(operating) {
-			try {
-				lock.wait();
-			} catch (InterruptedException e) {}
-		}
-		operating = true;
+		System.out.print(current.getId() + " working...");
+
 		
 		try {
 			//to slow down threads
-			Thread.sleep(300);
+			Thread.sleep(400);
 		} catch (InterruptedException e) {
 		}
 	}
@@ -168,9 +160,6 @@ public class ConfigReaderSingleton {
 	 */
 	private void unlock() {
 		Thread current = Thread.currentThread();
-		System.out.println(current.getId() + " done");
-		
-		operating = false;
-		lock.notifyAll();
+		System.out.println(" " + current.getId() + " done");
 	}
 }
