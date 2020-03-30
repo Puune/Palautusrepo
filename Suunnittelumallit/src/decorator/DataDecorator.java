@@ -3,7 +3,7 @@ package decorator;
 public abstract class DataDecorator implements IData{
 	protected IData dataToBeDecorated;
 	
-	public DataDecorator (IData DataToBeDecorated) {
+	public DataDecorator (IData dataToBeDecorated) {
 		this.dataToBeDecorated = dataToBeDecorated;
 	}
 	

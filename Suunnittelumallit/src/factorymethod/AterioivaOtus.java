@@ -8,11 +8,11 @@ public abstract class AterioivaOtus {
 
 
     public void aterioi(){
-        syÃ¶();
+        syö();
         juo();
     }
 
-    public void syÃ¶(){
+    public void syö(){
         System.out.println("Kyllï¿½pï¿½s ruoka maistuukin hyvï¿½ltï¿½");
     }
 

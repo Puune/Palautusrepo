@@ -2,13 +2,16 @@ package decorator;
 
 public class Data  implements IData{
 
+	protected String data;
+	
 	@Override
 	public String read() {
-		return null;
+		return data;
 	}
 
 	@Override
-	public void write(String data) {		
+	public void write(String data) {	
+		this.data = data;
 	}
 
 }
