@@ -47,7 +47,6 @@ public class Pokemon {
 	
 	/**
 	 * Get this pokemon's attack move
-	 * @param pokemon {@link Pokemon}
 	 */
 	public Attack attack() {
 		return state.getAttack();
