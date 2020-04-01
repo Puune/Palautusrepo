@@ -14,6 +14,7 @@ public class Pokemon {
 	/**
 	 * Create new pokemon
 	 * @param state {@link EvolutionState}
+	 * @param name String
 	 */
 	public Pokemon(EvolutionState intitialState, String name) {
 		this.state = intitialState;
