@@ -2,11 +2,11 @@ package stateAndTemplate.pokemon;
 
 public class Pokemon {
 
-	//Stays the whole Pokemons lifetime
+	// stay/cumulate over Pokemon's lifetime
 	private int experience;
 	private String name;
 	
-	//Overwrites by state-update
+	// get overridden by statechange.
 	private int health;
 	private EvolutionState state;
 	
