@@ -6,7 +6,7 @@ import java.util.Date;
  * @author Panu Lindqvist
  * ClockTimer
  */
-public class ClockTimer  extends Subject{
+public class ClockTimer extends Subject{
 	
 	public ClockTimer() {
 		Ticker ticker = new Ticker(this);
