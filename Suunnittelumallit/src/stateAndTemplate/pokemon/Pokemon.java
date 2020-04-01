@@ -56,6 +56,10 @@ public class Pokemon {
 	}
 	
 	
+	/**
+	 * Test if pokemon can run
+	 * @return canRun boolean
+	 */
 	public boolean run() {
 		return state.canRun();
 	}
