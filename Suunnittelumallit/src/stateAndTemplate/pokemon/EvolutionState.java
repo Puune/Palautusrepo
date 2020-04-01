@@ -22,4 +22,5 @@ public abstract class EvolutionState {
 	public abstract Attack getAttack();
 	public abstract int getEvolveThreshold();
 	public abstract EvolutionState getNext();
+	public abstract boolean canRun();
 }

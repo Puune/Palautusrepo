@@ -35,4 +35,9 @@ public class Charizard extends EvolutionState {
 		return null;
 	}
 
+	@Override
+	public boolean canRun() {
+		return false;
+	}
+
 }

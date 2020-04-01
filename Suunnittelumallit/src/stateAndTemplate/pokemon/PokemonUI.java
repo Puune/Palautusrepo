@@ -45,6 +45,14 @@ public class PokemonUI {
 		System.out.println("That did " + atk.getDamage() + " points of damage.\n");
 	}
 	
+	public void run(Pokemon p) {
+		System.out.println("Opponent " + p.getName() + " runs away!");
+	}
+	
+	public void runFailed(Pokemon p) {
+		System.out.println("Pokemon " + p.getName() + " tries to run but is too stubborn to!");
+	}
+	
 	public void endMatch(Pokemon loser, Pokemon winner, int xp) {
 		System.out.println(loser.getName() + " has fainted.");
 		System.out.println(winner.getName() + " gains " + xp + " xp!\n");

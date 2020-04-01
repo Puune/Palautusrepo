@@ -52,6 +52,7 @@ class PokemonGame extends Game {
 					? new Pokemon(new Rattata(null), String.valueOf(i)) 
 					: new Pokemon(new BigRattata(null),String.valueOf(i));
 					
+			opponents[0] = new Pokemon(new Rattata(null), String.valueOf(0));
 			delay();
 		}
 		ui.introduceOpponents(opponents);
@@ -68,6 +69,7 @@ class PokemonGame extends Game {
 		Attack atk;
 		while(!finished) {	
 			
+			//Battle
 			if(round%2==1) {
 				atk = mainPL.attack();
 				expGain += opponents[overrideJ].attackThis(atk);
@@ -76,6 +78,7 @@ class PokemonGame extends Game {
 					ui.endMatch(opponents[overrideJ], mainPL, expGain);
 					mainPL.giveExp(expGain);
 					finished = true;
+					break;
 				}
 				
 			} else {
@@ -85,8 +88,21 @@ class PokemonGame extends Game {
 				if(mainPL.getHealth()<1) {
 					ui.endMatch(mainPL, opponents[overrideJ], expGain);
 					finished = true;
+					break;
 				}
 			}
+			
+			//Run check
+			if(round>2 && Math.random()<(0.6 + (round/10))) {
+				if(opponents[overrideJ].run()) {
+					ui.run(opponents[overrideJ]);
+					mainPL.giveExp(expGain);
+					finished = true;
+				} else {
+					ui.runFailed(opponents[overrideJ]);
+				}
+			}
+			
 			round++;
 			delay();
 		}

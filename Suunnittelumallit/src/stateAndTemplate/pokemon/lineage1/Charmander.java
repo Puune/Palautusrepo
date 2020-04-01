@@ -12,7 +12,7 @@ public class Charmander extends EvolutionState{
 
 	@Override
 	public int getMaxHealth() {
-		return 15;
+		return 16;
 	}
 
 	@Override
@@ -22,7 +22,7 @@ public class Charmander extends EvolutionState{
 
 	@Override
 	public Attack getAttack() {
-		return new Attack("Ember", 8);
+		return new Attack("Ember", 7);
 	}
 
 	@Override
@@ -33,6 +33,11 @@ public class Charmander extends EvolutionState{
 	@Override
 	public EvolutionState getNext() {
 		return new Charmeleon(pokemon);
+	}
+
+	@Override
+	public boolean canRun() {
+		return true;
 	}
 
 	

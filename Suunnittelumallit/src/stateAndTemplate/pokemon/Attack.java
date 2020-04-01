@@ -6,7 +6,7 @@ public class Attack {
 	
 	public Attack(String name, int baseDamage) {
 		this.name = name;
-		this.damage = (int) Math.floor(baseDamage / 2 + (Math.random() * 2 * (baseDamage / 2)));
+		this.damage = (int) Math.floor(baseDamage / 1.3 + (Math.random() * 2 * (baseDamage / 3)));
 	}
 	
 	public int getDamage() {

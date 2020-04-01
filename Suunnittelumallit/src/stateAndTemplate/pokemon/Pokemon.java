@@ -1,7 +1,10 @@
 package stateAndTemplate.pokemon;
 
-public class Pokemon {
-
+/**
+ * Pokemon Class
+ * @author Panu
+ */
+public class Pokemon {	
 	// stay/cumulate over Pokemon's lifetime
 	private int experience;
 	private String name;
@@ -41,7 +44,7 @@ public class Pokemon {
 	 */
 	public int attackThis(Attack atk) {
 		health = health - atk.getDamage();
-		return (int) Math.ceil(atk.getDamage() / 2 * (Math.random() * 2));
+		return (int) Math.ceil(atk.getDamage() / 2.5 * (Math.random() * 2));
 	}
 	
 	
@@ -50,6 +53,11 @@ public class Pokemon {
 	 */
 	public Attack attack() {
 		return state.getAttack();
+	}
+	
+	
+	public boolean run() {
+		return state.canRun();
 	}
 	
 

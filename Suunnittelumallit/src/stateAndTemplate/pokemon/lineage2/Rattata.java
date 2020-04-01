@@ -12,7 +12,7 @@ public class Rattata extends EvolutionState{
 
 	@Override
 	public int getMaxHealth() {
-		return 10;
+		return 13;
 	}
 
 	@Override
@@ -22,7 +22,7 @@ public class Rattata extends EvolutionState{
 
 	@Override
 	public Attack getAttack() {
-		return new Attack("Scratch", 6);
+		return new Attack("Scratch", 4);
 	}
 
 	@Override
@@ -33,6 +33,11 @@ public class Rattata extends EvolutionState{
 	@Override
 	public EvolutionState getNext() {
 		return new BigRattata(pokemon);
+	}
+
+	@Override
+	public boolean canRun() {
+		return true;
 	}
 
 }

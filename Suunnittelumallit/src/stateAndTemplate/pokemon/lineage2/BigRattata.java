@@ -22,7 +22,7 @@ public class BigRattata extends EvolutionState {
 
 	@Override
 	public Attack getAttack() {
-		return new Attack("HyperBeam", 11);
+		return new Attack("HyperBeam", 8);
 	}
 
 	@Override
@@ -33,6 +33,11 @@ public class BigRattata extends EvolutionState {
 	@Override
 	public EvolutionState getNext() {
 		return null;
+	}
+
+	@Override
+	public boolean canRun() {
+		return false;
 	}
 
 }

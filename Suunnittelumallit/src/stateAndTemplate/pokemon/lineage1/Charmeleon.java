@@ -22,17 +22,22 @@ public class Charmeleon extends EvolutionState{
 
 	@Override
 	public Attack getAttack() {
-		return new Attack("Tackle", 12);
+		return new Attack("Tackle", 8);
 	}
 
 	@Override
 	public int getEvolveThreshold() {
-		return 12;
+		return 19;
 	}
 
 	@Override
 	public EvolutionState getNext() {
 		return new Charizard(pokemon);
+	}
+
+	@Override
+	public boolean canRun() {
+		return false;
 	}
 
 }
