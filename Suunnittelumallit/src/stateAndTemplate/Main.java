@@ -93,7 +93,7 @@ class PokemonGame extends Game {
 			}
 			
 			//Run check
-			if(round>2 && Math.random()<(0.6 + (round/10))) {
+			if(round>2 && Math.random()>(0.4 + (round/10))) {
 				if(opponents[overrideJ].run()) {
 					ui.run(opponents[overrideJ]);
 					mainPL.giveExp(expGain);
