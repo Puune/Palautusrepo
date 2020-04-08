@@ -1,14 +1,19 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-package etsint‰puu;
+package teht5_2;
 
 /**
  *
  * @author kamaj
  */
+//---------------------------------------------------------------
+// Arto Wikla: Ohjelmoinnin perusteet Java-kielell‰, OtaDATA 1998
+//---------------------------------------------------------------
+
+
 import java.io.*;
 public class Lue {
 /*************************************** Arto Wikla 1998**********
@@ -92,3 +97,4 @@ Operaatiot ovat sitkeit‰, ne VAATIVAT kelvollisen sy‰‰tteen!
     }
   }
 }
+
