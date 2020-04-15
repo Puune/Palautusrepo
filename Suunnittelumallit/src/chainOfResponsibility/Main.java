@@ -4,8 +4,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		Toimitusjohtaja t = new Toimitusjohtaja(null);
-		Yksikönpäällikkö yp = new Yksikönpäällikkö(t);
-		Lähiesimies le = new Lähiesimies(yp);
+		YksikÃ¶npÃ¤Ã¤llikkÃ¶ yp = new YksikÃ¶npÃ¤Ã¤llikkÃ¶(t);
+		LÃ¤hiesimies le = new LÃ¤hiesimies(yp);
 		
 		int i = 0;
 		while(i<30) {

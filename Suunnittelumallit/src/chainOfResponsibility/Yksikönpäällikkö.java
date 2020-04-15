@@ -1,15 +1,15 @@
 package chainOfResponsibility;
 
-public class Yksikönpäällikkö extends Handler {
+public class YksikÃ¶npÃ¤Ã¤llikkÃ¶ extends Handler {
 
-	public Yksikönpäällikkö(Handler s) {
+	public YksikÃ¶npÃ¤Ã¤llikkÃ¶(Handler s) {
 		super(s);
 	}
 	
 	@Override
 	public void handle(double amount) {
 		if(amount<5) {
-			System.out.println("Yksikön päällikkö hyväksyy " + amount + " % palkankorotuksen");
+			System.out.println("Yksikï¿½n pï¿½ï¿½llikkï¿½ hyvï¿½ksyy " + amount + " % palkankorotuksen");
 		} else {
 			super.handle(amount);
 		}

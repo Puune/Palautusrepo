@@ -1,15 +1,15 @@
 package chainOfResponsibility;
 
-public class Lähiesimies extends Handler{
+public class LÃ¤hiesimies extends Handler{
 
-	public Lähiesimies(Handler s) {
+	public LÃ¤hiesimies(Handler s) {
 		super(s);
 	}
 	
 	@Override
 	public void handle(double amount) {
 		if(amount<2) {
-			System.out.println("Lähiesimies hyväksyy " + amount + " % palkankorotuksen");
+			System.out.println("Lï¿½hiesimies hyvï¿½ksyy " + amount + " % palkankorotuksen");
 		} else {
 			super.handle(amount);
 		}
