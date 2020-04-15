@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package etsintäpuu;
+package etsintÃ¤puu;
 
 /**
  *
@@ -13,17 +13,17 @@ import java.io.*;
 public class Lue {
 /*************************************** Arto Wikla 1998**********
 
-Lukurutiinit kirjaan Ohjelmoinnin perusteet Java-kielellä
+Lukurutiinit kirjaan Ohjelmoinnin perusteet Java-kielellï¿½
 
 LUOKKA on JAVAN VERSIOILLE 1.1.*
 
-Operaatiot:   Lue.rivi()    antaa seuraavan syäättäärivin    (String)
+Operaatiot:   Lue.rivi()    antaa seuraavan syï¿½ï¿½ttï¿½ï¿½rivin    (String)
               Lue.kluku()     "      "      kokonaisluvun  (int)
               Lue.dluku()     "      "      desimaaliluvun (double)
-              Lue.merkki()  antaa seuraavan syäättäärivin ensimmäisen
+              Lue.merkki()  antaa seuraavan syï¿½ï¿½ttï¿½ï¿½rivin ensimmï¿½isen
 merkin
 
-Operaatiot ovat sitkeitä, ne VAATIVAT kelvollisen syäätteen!
+Operaatiot ovat sitkeitï¿½, ne VAATIVAT kelvollisen syï¿½ï¿½tteen!
 ******************************************************************/
 
   static BufferedReader stdin =

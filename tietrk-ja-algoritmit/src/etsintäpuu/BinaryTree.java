@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package etsintäpuu;
+package etsintÃ¤puu;
 
 /**
  *
@@ -21,6 +21,25 @@ public class BinaryTree {
         root = new Node(rootValue, left, right);
     }
     
+    
+    public void delete(String aData) {
+    	//check if to-be-deleted is this
+    	if(this.root.getData().equals(aData)) {
+    		
+    	} else {
+    		
+    		if(root.left() != null)
+    			root.left().delete(aData);
+    		if(root.right() != null)
+    			root.right().delete(aData);
+    	}
+    }
+    
+    
+    /**
+     * Insert new value, client will get promted to navigate downwards the tree
+     * @param aData
+     */
     public void insert(String aData){    	
     	BinaryTree left = root.left();
     	BinaryTree right = root.right();
@@ -58,6 +77,11 @@ public class BinaryTree {
     	}
     }
     
+    /**
+     * Find a node in the tree
+     * @param aData
+     * @return node {@link BinaryTree}
+     */
     public BinaryTree find(String aData){
     	
     	BinaryTree res = null;
@@ -80,9 +104,9 @@ public class BinaryTree {
     public void preOrder() {
         if (root != null) {
             System.out.println(root.getData()+',');
-            if (root.left() != null) // pääseeekää vasemmalle?
+            if (root.left() != null) // pï¿½ï¿½seeekï¿½ï¿½ vasemmalle?
                 root.left().preOrder();
-            if (root.right() != null) // pääseekää oikealle?
+            if (root.right() != null) // pï¿½ï¿½seekï¿½ï¿½ oikealle?
                 root.right().preOrder();
         }
 

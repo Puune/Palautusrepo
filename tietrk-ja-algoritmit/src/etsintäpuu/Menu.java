@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package etsintäpuu;
+package etsintÃ¤puu;
 
 /**
  *
@@ -24,11 +24,11 @@ public class Menu {
                 String data;
                 do {
 
-                        System.out.println("\n\t\t\t1. Lisää avain.");
+                        System.out.println("\n\t\t\t1. Lisï¿½ï¿½ avain.");
                         System.out.println("\t\t\t2. Etsi avaimella.");
-                        System.out.println("\t\t\t3. Käy puu läpi esijärjestyksessä.");
+                        System.out.println("\t\t\t3. Kï¿½y puu lï¿½pi esijï¿½rjestyksessï¿½.");
                         System.out.println("\t\t\t4. lopetus ");
-                        System.out.print("\n\n"); // tehdään tyhjiä rivejä
+                        System.out.print("\n\n"); // tehdï¿½ï¿½n tyhjiï¿½ rivejï¿½
                         select = Lue.merkki();
                         switch (select) {
                         case '1':
@@ -42,18 +42,18 @@ public class Menu {
                             }
                             break;
                         case '2':                           
-                                System.out.println("Anna etsittävä avain (merkkijono)");
+                                System.out.println("Anna etsittï¿½vï¿½ avain (merkkijono)");
                                 data = Lue.rivi();
                                 if (tree.find(data)!=null){
-                                    System.out.println("Avain löytyi.");
+                                    System.out.println("Avain lï¿½ytyi.");
                                 }
                                 else
-                                    System.out.println("Avainta ei löytynyt.");
+                                    System.out.println("Avainta ei lï¿½ytynyt.");
                                                            
                             break;
                         case '3':
                             tree.preOrder();
-                            char h = Lue.merkki(); // pysäytetään kontrolli
+                            char h = Lue.merkki(); // pysï¿½ytetï¿½ï¿½n kontrolli
                             break;
                         case '4':
                             break;
