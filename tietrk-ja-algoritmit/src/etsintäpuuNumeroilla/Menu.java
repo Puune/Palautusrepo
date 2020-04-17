@@ -3,7 +3,9 @@
  * and open the template in the editor.
  */
 
-package etsintäpuu;
+package etsintäpuuNumeroilla;
+
+import lajitteludemo.Lue;
 
 /**
  *
@@ -26,25 +28,30 @@ public class Menu {
 
                         System.out.println("\n\t\t\t1. Lisää avain.");
                         System.out.println("\t\t\t2. Etsi avaimella.");
-                        System.out.println("\t\t\t3. Käy puu läpi esijärjestyksessä.");
-                        System.out.println("\t\t\t4. lopetus ");
+                        System.out.println("\t\t\t3. Poista avain.");
+                        System.out.println("\t\t\t4. Käy puu läpi esijärjestyksessä.");
+                        System.out.println("\t\t\t5. Käy läpi sisäjärjestyksessä.");
+                        System.out.println("\t\t\t6. lopetus ");
                         System.out.print("\n\n"); // tehdään tyhjiä rivejä
                         select = Lue.merkki();
                         switch (select) {
                         case '1':
-                            System.out.println("Anna uusi avain (merkkijono)");
-                            data = new String(Lue.rivi());
+                            System.out.println("Anna uusi avain (numero)");
+//                            data = new String(Lue.rivi());
+                            int aData = Lue.kluku();
                             
                             if(tree == null) {
-                            	tree = new BinaryTree(data);
+                            	tree = new BinaryTree(aData);
                             } else {
-                            	tree.insert(data);
+                            	tree.insert(aData);
                             }
                             break;
                         case '2':                           
-                                System.out.println("Anna etsittävä avain (merkkijono)");
-                                data = Lue.rivi();
-                                if (tree.find(data)!=null){
+                                System.out.println("Anna etsittävä avain (numero)");
+//                                data = Lue.rivi();
+                                aData = Lue.kluku();
+                                
+                                if (tree.find(aData)!=null){
                                     System.out.println("Avain löytyi.");
                                 }
                                 else
@@ -52,14 +59,23 @@ public class Menu {
                                                            
                             break;
                         case '3':
+                        	System.out.println("Anna poistettava avain (numero");
+                        	aData = Lue.kluku();
+                        	tree.delete(aData);
+                        	break;
+                        case '4':
                             tree.preOrder();
                             char h = Lue.merkki(); // pysäytetään kontrolli
                             break;
-                        case '4':
+                        case '5':
+                        	tree.innerOrder();
+                        	char i = Lue.merkki();
+                        	break;
+                        case '6':
                             break;
                         }
                 }
-                while (select != '4');
+                while (select != '6');
         }
 //printMenu loppuu ----------------------------------------------------------------
 }

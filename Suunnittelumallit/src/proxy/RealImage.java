@@ -28,7 +28,7 @@ public class RealImage implements Image{
     
     
     @Override
-    public String showData() {
+    public String getData() {
     	System.out.println("Loading data from disk.. ");
     	return filename;
     }

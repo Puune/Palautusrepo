@@ -13,7 +13,7 @@ public class Holding extends State {
 
 	@Override
 	public int operate() {
-		Visitor visitor = new StateChangeVisitor();
+		Visitor visitor = StateChangeVisitor.getInstance();
 		visitor.visit(this);
 		return super.amount;
 	}

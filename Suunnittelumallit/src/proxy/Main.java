@@ -24,7 +24,7 @@ public class Main {
 			case "2":
 				int n = 1;
 				for(Image i : folder) {
-					System.out.println(n + ". " + i.showData());
+					System.out.println(n + ". " + i.getData());
 					n++;
 				}
 				break;

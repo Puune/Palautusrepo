@@ -13,7 +13,7 @@ public class Gaining extends State{
 	@Override
 	public int operate() {
 		super.changeAmount(1);
-		Visitor visitor = new StateChangeVisitor();
+		Visitor visitor = StateChangeVisitor.getInstance();
 		visitor.visit(this);
 		return super.amount;
 	}

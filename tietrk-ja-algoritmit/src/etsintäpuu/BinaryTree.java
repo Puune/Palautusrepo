@@ -11,7 +11,7 @@ package etsintäpuu;
  */
 public class BinaryTree {
 
-    private Node root;
+    public Node root;
     
     public BinaryTree(String rootValue) {
         root = new Node(rootValue);
@@ -22,16 +22,36 @@ public class BinaryTree {
     }
     
     
-    public void delete(String aData) {
+    public BinaryTree delete(int aData) {
     	//check if to-be-deleted is this
     	if(this.root.getData().equals(aData)) {
+
+    		if(root.left()==null && root.right()==null) {
+    			return null;
+    		} else {
+    			Node parent = root;
+    			Node node = root;
+    			while(node.left()!=null) {
+    				parent = node;
+    				node = node.left().root;
+    			}
+    			if(node.right()==null) {
+    				parent.setLeft(null);
+    				return new BinaryTree(node.getData(), node.left(), node.right());
+    			} else {
+    				parent.setLeft(node.right());
+    				return new BinaryTree(node.getData(), node.left(), node.right());
+    			}
+    		}
     		
     	} else {
-    		
+    		//not target node
     		if(root.left() != null)
-    			root.left().delete(aData);
+    			root.setLeft(root.left().delete(aData));
     		if(root.right() != null)
-    			root.right().delete(aData);
+    			root.setRight(root.right().delete(aData));
+    		
+    		return this;
     	}
     }
     

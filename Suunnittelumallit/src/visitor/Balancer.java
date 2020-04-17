@@ -24,11 +24,6 @@ public class Balancer extends Thread{
 		this.state = state;
 	}
 	
-	@Override
-	public String toString() {
-		return state.toString();
-	}
-	
 	public synchronized int changeAmount(int i) {
 		System.out.println("changing amount: " + i);
 		return state.changeAmount(i);
@@ -56,5 +51,10 @@ public class Balancer extends Thread{
 	
 	public void stopOperating() {
 		operating = false;
+	}
+	
+	@Override
+	public String toString() {
+		return state.toString();
 	}
 } 

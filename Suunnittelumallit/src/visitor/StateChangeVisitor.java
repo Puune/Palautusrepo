@@ -12,6 +12,13 @@ public class StateChangeVisitor implements Visitor {
 		target = amount;
 	}
 	
+	private StateChangeVisitor() {	}
+	static final StateChangeVisitor INSTANCE = new StateChangeVisitor(); 
+	
+	public static StateChangeVisitor getInstance() {
+		return INSTANCE;
+	}
+	
 
 	@Override
 	public void visit(State state) {

@@ -23,7 +23,7 @@ public class ProxyImage implements Image{
     }
 
 	@Override
-	public String showData() {
+	public String getData() {
 		String descript;
 		if(image==null) {
 			descript = " -- Image not loaded";
