@@ -5,6 +5,8 @@
 
 package etsintäpuuNumeroilla;
 
+import javafx.scene.Parent;
+
 /**
  *
  * @author kamaj
@@ -70,49 +72,52 @@ public class BinaryTree {
         return res;
     }
     
+ 
+    private void transplant(Node parent, Node u, Node v) {
+    	if(parent==null) {
+    		u = v;
+    	} else if (u == parent.left().root) {
+    		parent.left().root = v;
+    	} else {
+    		parent.right().root = v;
+    	}
+    }
     
-    public BinaryTree delete(int aData) {
+    
+    public BinaryTree delete(int aData, BinaryTree node) {
     	//check if to-be-deleted is this
     	if(this.root.getData()==aData) {
-
-    		if(root.left()==null && root.right()==null) {
-    			return null;
+    		Node originalParent = node.root;
+    	
+    		if(root.left()==null) {
+    			transplant(node.root, this.root, root.right().root);
+    		} else if(root.right()==null) {
+    			transplant(node.root, this.root, root.left().root);
     		} else {
-    			Node parent = root;
-    			Node up = root;
-    			Node node = root;
-    			
-    			if(node.right()!=null) {
-    				node = node.right().root;
+    			Node minimum = this.root.right().root;
+    			Node minParent = this.root;
+    			while(minimum.left()!=null) {
+    				minParent = minimum;
+    				minimum = root.left().root;
     			}
-    			
-    			while(node.left()==null) {
-    				node = node.right().root;
+    			if(root.right().root != minimum && root.left().root != minimum) {
+    				transplant(minParent, minimum, minimum.right().root);
+    				minimum.right().root = this.root;
+    				originalParent = minimum;
     			}
-    			
-    			while(node.left()!=null) {
-    				up = node;
-    				node = node.left().root;
-    			}
-    			System.out.println("parent: " + parent.getData());
-    			System.out.println("up: " + up.getData());
-    			System.out.println("node: " + node.getData());
-    			System.out.println("parent is up: " + parent.equals(up));
-    			if(node.right()==null) {
-    				up.setLeft(null);
-    				return new BinaryTree(node.getData(), parent.left(), parent.right());
-    			} else {
-    				up.setLeft(node.right());
-    				return new BinaryTree(node.getData(), parent.left(), parent.right());
-    			}
+    			transplant(node.root, this.root, minimum);
+    			minimum.setLeft(this.root.left());
+    			originalParent = minimum;
     		}
+    		
+    		return null;
     		
     	} else {
     		//not target node
     		if(root.left() != null)
-    			root.setLeft(root.left().delete(aData));
+    			root.setLeft(root.left().delete(aData, this));
     		if(root.right() != null)
-    			root.setRight(root.right().delete(aData));
+    			root.setRight(root.right().delete(aData, this));
     		
     		return this;
     	}

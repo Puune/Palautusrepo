@@ -61,7 +61,7 @@ public class Menu {
                         case '3':
                         	System.out.println("Anna poistettava avain (numero");
                         	aData = Lue.kluku();
-                        	tree.delete(aData);
+                        	tree.delete(aData, null);
                         	break;
                         case '4':
                             tree.preOrder();
