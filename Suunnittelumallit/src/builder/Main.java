@@ -1,30 +1,24 @@
 package builder;
 
+import java.util.ArrayList;
 import java.util.Iterator;
-
-import builder.parts.Content;
-import builder.parts.Product;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Director mcD = new Director(new HamburgerBuilder.McDBuilder());
-		Director hes = new Director(new HamburgerBuilder.HesBuilder());
+		Director mcD = new Director(new McDBuilder());
+		Director hes = new Director(new HesBuilder());
 		
 		mcD.construct();
-		Product a = mcD.getProduct();
-		Iterator<Content> i = a.iterator();
-		while(i.hasNext()) {
-			System.out.println(i.next().getInfo());
+		ArrayList<Content> list = (ArrayList<Content>) mcD.getBuilder().getProduct();
+		for(Content c : list) {
+			System.out.println(c.getInfo());
 		}
 		
-		System.out.println("\n\n");
+		System.out.println("\n");
 		
 		hes.construct();
-		a = hes.getProduct();
-		i = a.iterator();
-		while(i.hasNext()) {
-			System.out.println(i.next().getInfo());
-		}
+		String res = (String) hes.getBuilder().getProduct();
+		System.out.println(res);
 	}
 }

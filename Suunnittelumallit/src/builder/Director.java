@@ -1,6 +1,5 @@
 package builder;
 
-import builder.parts.Product;
 
 public class Director {
 	private HamburgerBuilder hb;
@@ -9,12 +8,11 @@ public class Director {
 		this.hb = hb;
 	}
 	
-	public Product getProduct() {
-		return hb.getProduct();
+	public HamburgerBuilder getBuilder() {
+		return hb;
 	}
 	
 	public void construct() {
-		hb.createNewProduct();
 		hb.buildBun();
 		hb.buildSalad();
 		hb.buildSteak();
