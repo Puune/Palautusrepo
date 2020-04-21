@@ -18,8 +18,8 @@ public class Main {
 		RandomizerStringAdapter rsa = new RandomizerStringAdapter();
 		String asdf = "abcde";
 		asdf = rsa.randomize(asdf);
-		
-		for(char c : chars) {
+				
+		for(char c : asdf.toCharArray()) {
 			System.out.println(c);
 		}
 	}

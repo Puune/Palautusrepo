@@ -10,7 +10,12 @@ public class RandomizerStringAdapter extends CharRandomizer implements Randomize
 		}
 		
 		chars = super.randomize(chars);
-		String res = chars.toString();
-		return res;
+		
+		String result = "";
+		for(char c : chars) {
+			result += c;
+		}
+		
+		return result;
 	}
 }
