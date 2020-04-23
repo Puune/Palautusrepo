@@ -97,6 +97,19 @@ public class BinaryTree {
     	}
     }
     
+    public int getHeight() {
+    	int top = 0;
+    	int current = 0;
+    	
+    	if(root.left()!=null) {
+    		root.left().getHeight();
+    	}
+    	
+    	if(root.right()!=null) {
+    		root.right().getHeight();
+    	}
+    }
+    
     /**
      * Find a node in the tree
      * @param aData
