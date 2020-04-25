@@ -98,16 +98,18 @@ public class BinaryTree {
     }
     
     public int getHeight() {
-    	int top = 0;
-    	int current = 0;
+    	int leftHeight = 0;
+    	int rightHeight = 0;
     	
     	if(root.left()!=null) {
-    		root.left().getHeight();
+    		leftHeight = root.left().getHeight();
     	}
     	
     	if(root.right()!=null) {
-    		root.right().getHeight();
+    		rightHeight = root.right().getHeight();
     	}
+    	
+    	return leftHeight > rightHeight ? leftHeight : rightHeight;
     }
     
     /**

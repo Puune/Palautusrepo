@@ -124,6 +124,82 @@ public class BinaryTree {
     }
     
     
+    public int getHeight() {
+    	int leftHeight;
+    	int rightHeight;
+    	
+    	if(root.left()!=null) {
+    		leftHeight = root.left().getHeight();
+    		leftHeight++;
+    	}	else 
+    		leftHeight = 0;
+    	
+    	if(root.right()!=null) {
+    		rightHeight = root.right().getHeight();
+    		rightHeight++;
+    	} else
+    		rightHeight = 0;
+    	    	
+    	return leftHeight > rightHeight ? leftHeight : rightHeight;
+    }
+    
+    
+    public boolean isBalanced(BinaryTree tree) {
+    	return isBalancedRecursive(tree, -1).isBalanced;
+    }
+    
+    private BalResult isBalancedRecursive(BinaryTree tree, int depth) {
+    	BalResult leftSubtree;
+    	BalResult rightSubtree;
+    	System.out.println(root.getData());
+    	if(tree==null) {
+    		return new BalResult(true, -1);
+    	}
+    	
+    	if(root.left()!=null)
+    		leftSubtree = root.left().isBalancedRecursive(root.left(), depth+1);
+    	else
+    		leftSubtree = new BalResult(true, -1);
+    	
+    	if(root.right()!=null)
+    		rightSubtree = root.right().isBalancedRecursive(root.right(), depth +1);
+    	else
+    		rightSubtree = new BalResult(true, -1);
+    	
+    	boolean isBalanced = Math.abs(leftSubtree.height - rightSubtree.height) <= 1;
+    	boolean subtreesAreBalanced = leftSubtree.isBalanced && rightSubtree.isBalanced;
+    	int height = rightSubtree.height >= leftSubtree.height ? rightSubtree.height+1 : leftSubtree.height+1;
+    	return new BalResult(isBalanced && subtreesAreBalanced, height);
+    }
+    class BalResult {
+    	private boolean isBalanced;
+    	private int height;
+    	
+    	private  BalResult(boolean isBalanced, int height) {
+    		this.isBalanced = isBalanced;
+    		this.height = height;
+    	}
+    	
+    	public boolean getBalanced() { return isBalanced; } 
+    }
+    
+    
+    public int binarySearch(int target) {
+    	
+    	if(root.getData()==target) {
+    		System.out.println("-> this");
+    		return this.root.getData();
+    	} else if(root.getData()<target) {
+    		System.out.println("-> right");
+    		return root.right().binarySearch(target);
+    	} else if(root.getData()>target) {
+    		System.out.println("-> left");
+    		return root.left().binarySearch(target);
+    	}
+    	return 0;
+    }
+    
+    
     public void preOrder() {
         if (root != null) {
         	StringBuilder sb = new StringBuilder();

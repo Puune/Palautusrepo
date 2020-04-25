@@ -28,10 +28,13 @@ public class Menu {
 
                         System.out.println("\n\t\t\t1. Lisää avain.");
                         System.out.println("\t\t\t2. Etsi avaimella.");
-                        System.out.println("\t\t\t3. Poista avain.");
-                        System.out.println("\t\t\t4. Käy puu läpi esijärjestyksessä.");
-                        System.out.println("\t\t\t5. Käy läpi sisäjärjestyksessä.");
-                        System.out.println("\t\t\t6. lopetus ");
+                        System.out.println("\t\t\t3. Binaarihaku.");
+                        System.out.println("\t\t\t4. Poista avain.");
+                        System.out.println("\t\t\t5. Hae avain & kerro korkeus");
+                        System.out.println("\t\t\t6. Testaa puun tasapainoisuus");
+                        System.out.println("\t\t\t7. Käy puu läpi esijärjestyksessä.");
+                        System.out.println("\t\t\t8. Käy läpi sisäjärjestyksessä.");
+                        System.out.println("\t\t\t9. lopetus ");
                         System.out.print("\n\n"); // tehdään tyhjiä rivejä
                         select = Lue.merkki();
                         switch (select) {
@@ -59,19 +62,36 @@ public class Menu {
                                                            
                             break;
                         case '3':
+                        	System.out.println("Anna etsittävä avain");
+                        	aData = Lue.kluku();
+                        	int res = tree.binarySearch(aData);
+                        	if(res!=0) { System.out.println("Löytyi: " + res); }
+                        	break;
+                        case '4':
                         	System.out.println("Anna poistettava avain (numero");
                         	aData = Lue.kluku();
                         	tree.delete(aData, null);
                         	break;
-                        case '4':
+                        case '5':
+                        	System.out.println("Anna avain");
+                        	aData = Lue.kluku();
+                        	BinaryTree bt = tree.find(aData);
+                        	int height = bt.getHeight();
+                        	System.out.println("Solmun korkeus on: " + height);
+                        	break;
+                        case'6':
+                        	boolean balanced = tree.isBalanced(tree);
+                        	System.out.println("Puu on tasapainossa: " + balanced);
+                        	break;
+                        case '7':
                             tree.preOrder();
                             char h = Lue.merkki(); // pysäytetään kontrolli
                             break;
-                        case '5':
+                        case '8':
                         	tree.innerOrder();
                         	char i = Lue.merkki();
                         	break;
-                        case '6':
+                        case '9':
                             break;
                         }
                 }
